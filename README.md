@@ -3,6 +3,8 @@
 # docker-reticulum
 Docker container running rnsd
 
+v1.5.5
+
 ## Command line example
 ```docker run --rm --net=host -v /path/to/local/.reticulum:/home/nonroot/.reticulum -t jordan/reticulum:latest```
 
