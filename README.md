@@ -1,15 +1,18 @@
 [![Docker Image CI](https://github.com/jjethwa/docker-reticulum/actions/workflows/docker-image.yml/badge.svg)](https://github.com/jjethwa/docker-reticulum/actions/workflows/docker-image.yml)
 
 # docker-reticulum
+
 Docker container running rnsd
 
-v1.5.5
+Current version: v1.5.6
 
 ## Command line example
-```docker run --rm --net=host -v /path/to/local/.reticulum:/home/nonroot/.reticulum -t jordan/reticulum:latest```
+
+`docker run --rm --net=host -v /path/to/local/.reticulum:/home/nonroot/.reticulum -t jordan/reticulum:latest`
 
 ## systemd unit
-```
+
+```ini
 [Unit]
 Description=reticulum
 After=docker.service
@@ -25,8 +28,10 @@ ExecStart=/usr/bin/docker run --net=host --name reticulum -e UMASK_SET=022 -v /p
 [Install]
 WantedBy=multi-user.target
 ```
+
 ## Example config .reticulum/config
-```
+
+```ini
 [reticulum]
   enable_transport = True
 
@@ -52,4 +57,18 @@ WantedBy=multi-user.target
     target_host = x.x.x.x
     target_port = 4242
     bootstrap_only = True
+```
+
+## Example compose.yml file
+
+```yaml
+services:
+  server:
+    container_name: rns
+    image: jordan/reticulum:latest
+    ports:
+      - "4242:4242"
+    restart: unless-stopped
+    volumes:
+      - /path/to/local/.reticulum:/home/nonroot/.reticulum
 ```
