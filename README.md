@@ -4,7 +4,7 @@
 
 Docker container running rnsd
 
-Current version: v1.5.6
+Current version: v1.5.7
 
 ## Command line example
 
