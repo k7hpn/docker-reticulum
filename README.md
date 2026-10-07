@@ -4,8 +4,6 @@
 
 Docker container running rnsd
 
-Current version: v1.5.7
-
 ## Command line example
 
 `docker run --rm --net=host -v /path/to/local/.reticulum:/home/nonroot/.reticulum -t jordan/reticulum:latest`
@@ -72,3 +70,4 @@ services:
     volumes:
       - /path/to/local/.reticulum:/home/nonroot/.reticulum
 ```
+
