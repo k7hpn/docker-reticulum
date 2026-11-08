@@ -1,4 +1,4 @@
-FROM dhi.io/python:3.14-alpine-dev AS build
+FROM dhi.io/python:3.15-alpine-dev AS build
 
 ARG VERSION_RNS
 RUN test -n "$VERSION_RNS" || (echo "VERSION_RNS not set" && exit $?)
@@ -14,7 +14,7 @@ ENV PATH=$VIRTUAL_ENV/bin:$PATH
 
 RUN pip install --no-cache-dir rns==$VERSION_RNS lxmf==$VERSION_LXMF
 
-FROM dhi.io/python:3.14-alpine
+FROM dhi.io/python:3.15-alpine
 
 ARG IMAGE_CREATED=unknown
 ARG IMAGE_REVISION=unknown
