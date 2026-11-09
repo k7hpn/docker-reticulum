@@ -20,11 +20,12 @@ You must configure a Docker user and password to access the hardened Python imag
   - Name: `CR_HOST` Value: hostname of the Gitea instance
   - Name: `CR_IMAGE` Value: the name of the Gitea repository
   - Name: `CR_USER` Value: your Gitea username
-3. Choose `Applications` on the left to generate a personal access token
+3. Click on your profile icon on the top right, open `Settings` in a new tab, then select `Applications` on the left to gene
+rate a personal access token
   - Name it something memorable
   - Set `package` permissions to `Read and write`
   - Generate the token
-3. Choose `Secrets` on the left and add the following secret:
+4. Back to your other tab, choose `Secrets` on the left and add the following secret:
   - Name: `CR_PASSWORD` Value: the token you generated above
 
 ## Nomenclature
